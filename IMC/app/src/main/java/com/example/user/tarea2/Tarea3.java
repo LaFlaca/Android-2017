@@ -5,11 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Tarea3 extends AppCompatActivity {
 
     EditText editalt, editpeso;
     TextView mostrarimc;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,22 +24,37 @@ public class Tarea3 extends AppCompatActivity {
 
     }
 
-    public double calcularMasaCorporal (){
-
+    public double calcularMasaCorporal () {
 
         double imc;
-        double altura = Double.parseDouble(editalt.getText().toString());
-        double peso = Double.parseDouble(editpeso.getText().toString());
+            double altura = Double.parseDouble(editalt.getText().toString());
+            double peso = Double.parseDouble(editpeso.getText().toString());
 
             imc = peso / (altura * altura);
+
+
             return imc;
 
-        }
-}
+
+    }
+
 
     public void calcular(View view) {
         double imcc;
-        imcc = calcularMasaCorporal();
-        mostrarimc.setText("" + imcc);
+
+        if (editalt.length() > 0 && editpeso.length() > 0) {
+            imcc = calcularMasaCorporal();
+
+
+            if (imcc > 19 && imcc < 24.9){
+                mostrarimc.setText(" El paciente se encuentra en el peso adecuado");
+            } else {
+                mostrarimc.setText(" El paciente NO se encuentra en el peso adecuado");
+            }
+        }
+        else {
+            Toast toast = Toast.makeText(this, "Debe ingresar todos los valores", Toast.LENGTH_LONG);
+            toast.show();
+        }
     }
 }
