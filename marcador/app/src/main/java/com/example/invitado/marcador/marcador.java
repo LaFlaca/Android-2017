@@ -31,7 +31,7 @@ public class marcador extends AppCompatActivity {
             float delta = mAccelCurrent - mAccelLast;
             mAccel = mAccel * 0.9f + delta; // perform low-cut filter
             onPause();
-            if (mAccel > 30) {
+            if (mAccel > 10) {
                 ((TextView)findViewById(R.id.TV_j1puntos)).setText("0");
                 ((TextView)findViewById(R.id.TV_j2puntos)).setText("0");
             }
@@ -84,6 +84,7 @@ public class marcador extends AppCompatActivity {
             Toast toast = Toast.makeText(this,"Ganador jugador 1",Toast.LENGTH_LONG);
             toast.show();
             ((TextView)findViewById(R.id.TV_j1puntos)).setText("0");
+            ((TextView)findViewById(R.id.TV_j2puntos)).setText("0");
             S=0;
         }
         j1.setText(S+"");
@@ -104,6 +105,7 @@ public class marcador extends AppCompatActivity {
             Toast toast = Toast.makeText(this,"Ganador jugador 2",Toast.LENGTH_LONG);
             toast.show();
             ((TextView)findViewById(R.id.TV_j2puntos)).setText("0");
+            ((TextView)findViewById(R.id.TV_j1puntos)).setText("0");
             S=0;
         }
         j2.setText(S+"");
@@ -117,4 +119,6 @@ public class marcador extends AppCompatActivity {
         }
         j2.setText(S+"");
     }
+
+
 }
