@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.invitado.segundoparcial.Dialogo">
+
+    <TextView
+        android:id="@+id/tv_nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fernanda Lopez"
+        android:layout_marginStart="2dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_matricula"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/btn_web" />
+
+    <TextView
+        android:id="@+id/tv_matricula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Matricula: 3679"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="106dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/tv_nombre"
+        android:layout_marginLeft="22dp" />
+
+    <Button
+        android:id="@+id/btn_web"
+        android:layout_width="222dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="41dp"
+        android:background="@android:color/holo_green_light"
+        android:onClick="web"
+        android:text="Pagina web"
+        app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="222dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="272dp"
+        android:background="@android:color/holo_green_dark"
+        android:onClick="back2login"
+        android:text="Cerrar"
+        android:textColor="?attr/actionMenuTextColor"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+</android.support.constraint.ConstraintLayout>
